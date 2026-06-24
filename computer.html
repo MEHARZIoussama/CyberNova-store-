@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberNova - Computers</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="nova.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">CYBER<span>NOVA</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="computer.html">Computers</a>
+      <a href="phones.html">Phones</a>
+      <a href="#">About</a>
+    </div>
+    <div class="nav-icons">
+      <button class="search-trigger-btn" aria-label="Open search">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+      </button>
+      <button class="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-panel" id="searchPanel">
+
+      <div class="search-input-row">
+        <i class="fas fa-search" id="searchIcon"></i>
+        <input id="searchInput" type="text" placeholder="Search products, brands..." autocomplete="off" />
+        <span id="searchMeta" class="search-meta"></span>
+        <button class="search-close-btn" id="closeSearchBtn" aria-label="Close search">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="search-trending-zone" id="trendingZone">
+        <div class="search-trending-label">TRENDING NOW</div>
+        <div class="search-chips" id="trendingChips"></div>
+      </div>
+
+      <div class="search-results-zone" id="resultsZone"></div>
+
+      <div class="search-empty-zone" id="emptyZone">
+        <i class="fas fa-meh"></i>
+        <div>No matching results</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-arrow"></div>
+
+    <div class="cart-panel-header">
+      <span class="cart-panel-title">YOUR CART</span>
+      <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="cart-ship-bar-wrap">
+      <div class="cart-ship-row">
+        <span id="shipLabel">أضف منتجات لشحن مجاني</span>
+        <span id="shipPercent" class="cart-ship-percent">0%</span>
+      </div>
+      <div class="cart-ship-track">
+        <div class="cart-ship-fill" id="shipFill"></div>
+      </div>
+    </div>
+
+    <div class="cart-items" id="cartItemsList"></div>
+
+    <div class="cart-panel-footer">
+      <div class="cart-total-row">
+        <span>TOTAL</span>
+        <span id="cartTotal">0$</span>
+      </div>
+      <button class="cart-checkout-btn" id="checkoutBtn">
+        <i class="fas fa-lock"></i> CHECKOUT
+      </button>
+      <button class="cart-view-btn" id="viewCartBtn">عرض السلة كاملة</button>
+    </div>
+  </div>
+
+  <div class="cart-overlay-catcher" id="cartCatcher"></div>
+
+  <div class="wrapper">
+    <canvas id="glCanvas"></canvas>
+    <div class="content">
+      <h2 class="page-title">Choose Category</h2>
+      <p class="page-sub">Select a category to explore products</p>
+      <div class="cats-grid">
+
+        <a href="products.html?cat=laptops" class="cat-card">
+          <div class="glow"></div>
+          <i class="fas fa-laptop"></i>
+          <span class="cat-label">Laptops</span>
+          <span class="cat-count">24 products</span>
+          <div class="underline"></div>
+        </a>
+
+        <a href="products.html?cat=monitors" class="cat-card">
+          <div class="glow"></div>
+          <i class="fas fa-desktop"></i>
+          <span class="cat-label">Monitors</span>
+          <span class="cat-count">18 products</span>
+          <div class="underline"></div>
+        </a>
+
+        <a href="products.html?cat=ram" class="cat-card">
+          <div class="glow"></div>
+          <i class="fas fa-memory"></i>
+          <span class="cat-label">RAM</span>
+          <span class="cat-count">12 products</span>
+          <div class="underline"></div>
+        </a>
+
+        <a href="products.html?cat=headphones" class="cat-card">
+          <div class="glow"></div>
+          <i class="fas fa-headphones"></i>
+          <span class="cat-label">Headphones</span>
+          <span class="cat-count">31 products</span>
+          <div class="underline"></div>
+        </a>
+
+        <a href="products.html?cat=mouse" class="cat-card">
+          <div class="glow"></div>
+          <i class="fas fa-computer-mouse"></i>
+          <span class="cat-label">Mouse</span>
+          <span class="cat-count">20 products</span>
+          <div class="underline"></div>
+        </a>
+
+        <a href="products.html?cat=keyboard" class="cat-card">
+          <div class="glow"></div>
+          <i class="fas fa-keyboard"></i>
+          <span class="cat-label">Keyboard</span>
+          <span class="cat-count">15 products</span>
+          <div class="underline"></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="nova-bubble" id="novaBubble" aria-label="Open NOVA assistant">
+    <div class="nova-pulse"></div>
+    <i class="fas fa-magic"></i>
+    <span class="nova-dot" id="novaDot"></span>
+  </div>
+
+  <div class="nova-panel" id="novaPanel">
+    <div class="nova-header">
+      <div class="nova-avatar"><i class="fas fa-magic"></i></div>
+      <div class="nova-header-text">
+        <div class="nova-name">NOVA</div>
+        <div class="nova-status"><span></span>Online</div>
+      </div>
+      <button class="nova-close" id="novaClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="nova-messages" id="novaMessages"></div>
+    <div class="nova-options-zone" id="novaOptionsZone"></div>
+  </div>
+
+  <script src="bg.js"></script>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('mobile-open');
+    });
+  </script>
+  <script src="transition.js"></script>
+  <script src="cart.js"></script>
+  <script src="products-data.js"></script>
+  <script src="search.js"></script>
+  <script src="nova.js"></script>
+</body>
+</html>

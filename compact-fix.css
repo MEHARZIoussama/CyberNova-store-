@@ -1,0 +1,130 @@
+.page {
+  padding: 90px 40px 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1100px;
+}
+
+.nav-trail {
+  align-self: flex-start;
+  margin-bottom: 32px;
+}
+
+.cat-label {
+  margin-bottom: 4px;
+}
+
+.cat-title {
+  margin-bottom: 32px;
+}
+
+.stage {
+  min-height: 0;
+  margin-bottom: 32px;
+}
+
+.img-wrap {
+  width: 240px;
+  height: 240px;
+  font-size: 86px;
+}
+
+.p-name {
+  font-size: 30px;
+}
+
+.p-price {
+  font-size: 27px;
+}
+
+.info {
+  max-width: 360px;
+}
+
+.others-label {
+  margin: 0 0 18px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 86px 24px 24px;
+  }
+
+  .img-wrap {
+    width: 170px;
+    height: 170px;
+    font-size: 60px;
+  }
+
+  .p-name {
+    font-size: 24px;
+  }
+}
+
+@media (max-height: 700px) {
+  .page {
+    padding: 80px 24px 20px;
+  }
+
+  .img-wrap {
+    width: 160px;
+    height: 160px;
+    font-size: 58px;
+  }
+
+  .cat-title {
+    margin-bottom: 18px;
+    font-size: 26px;
+  }
+
+  .nav-trail {
+    margin-bottom: 16px;
+  }
+
+  .stage {
+    margin-bottom: 18px;
+  }
+
+  .others-label {
+    margin-bottom: 10px;
+  }
+
+  .mini {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+}
+
+@media (max-height: 600px) {
+  .page {
+    padding-top: 72px;
+  }
+
+  .img-wrap {
+    width: 130px;
+    height: 130px;
+    font-size: 48px;
+  }
+
+  .cat-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .nav-trail {
+    margin-bottom: 10px;
+  }
+
+  .stage {
+    margin-bottom: 10px;
+  }
+
+  .mini {
+    width: 68px;
+    height: 68px;
+    font-size: 20px;
+  }
+}
